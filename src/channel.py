@@ -34,6 +34,54 @@ class Channel:
         """
         return self.__channel_id
 
+    def __str__(self):
+        """
+        Вывод строки с названием канала и ссылкой на него
+        """
+        return f'{self.title} ({self.url})'
+
+    def __add__(self, other):
+        """
+        Вывод суммы подписчиков двух каналов
+        """
+        return int(self.subscribers) + int(other.subscribers)
+
+    def __sub__(self, other):
+        """
+        Вывод разности подписчиков двух каналов
+        """
+        return int(self.subscribers) - int(other.subscribers)
+
+    def __gt__(self, other):
+        """
+        Вывод True или False утверждения, что 1 канал > 2 канала
+        """
+        return int(self.subscribers) > int(other.subscribers)
+
+    def __ge__(self, other):
+        """
+        Вывод True или False утверждения, что 1 канал >= 2 канала
+        """
+        return int(self.subscribers) >= int(other.subscribers)
+
+    def __lt__(self, other):
+        """
+        Вывод True или False утверждения, что 1 канал < 2 канала
+        """
+        return int(self.subscribers) < int(other.subscribers)
+
+    def __le__(self, other):
+        """
+        Вывод True или False утверждения, что 1 канал <= 2 канала
+        """
+        return int(self.subscribers) <= int(other.subscribers)
+
+    def __eq__(self, other):
+        """
+        Вывод True или False утверждения, что 1 канал == 2 каналу
+        """
+        return int(self.subscribers) == int(other.subscribers)
+
     def print_info(self) -> None:
         """
         Выводит в консоль всю информацию о канале.
