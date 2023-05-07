@@ -18,10 +18,10 @@ class Channel:
         self.title = self.channel["items"][0]["snippet"]["title"]
 
         self.description = self.channel["items"][0]["snippet"]["description"]
-        self.url = 'https://www.youtube.com/channel/UCMCgOm8GZkHp8zJ6l7_hIuA'
-        self.subscribers = self.channel["items"][0]["statistics"]['subscriberCount']
-        self.video_count = self.channel["items"][0]["statistics"]['videoCount']
-        self.view_count = self.channel["items"][0]["statistics"]['viewCount']
+        self.url = 'https://www.youtube.com/channel/' + self.channel["items"][0]["id"]
+        self.subscribers = self.channel["items"][0]["statistics"]["subscriberCount"]
+        self.video_count = self.channel["items"][0]["statistics"]["videoCount"]
+        self.view_count = self.channel["items"][0]["statistics"]["viewCount"]
 
         self.channel_info = {'channel_id': self.channel_id, 'title': self.title, 'description': self.description,
                          'url': self.url, 'subscribers': self.subscribers, 'video_count': self.video_count,
